@@ -36,3 +36,14 @@ def getDeclaredVariableswithData(content):
                                 ret_data.append(data)
 
     return ret_data
+
+
+def analyseVariables(variables):
+    for data in variables:
+        # print(data[0])
+        if "{" in data[-1]:
+            value = data.split('=')
+            if len(value) ==2 :
+                print(data)
+        else:
+            print(data)

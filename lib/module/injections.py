@@ -1,4 +1,4 @@
-from .variables import getDeclaredVariableswithData
+from .variables import getDeclaredVariableswithData, analyseVariables
 
 class Injection:
     def __init__(self,filename,content):
@@ -7,5 +7,6 @@ class Injection:
 
     def sqlInjection(self):
         variables = getDeclaredVariableswithData(self.content)
-        for i in variables:
-            print(i) #till get variables
+        analyseVariables(variables)
+        # for i in variables:
+        #     print(i) #till get variables
