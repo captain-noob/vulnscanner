@@ -1,5 +1,6 @@
 from .module.filesandfolders import getAllFiles ,getFullPath ,filterPHPfiles ,readFile
 from .module.fileAnalyzer import FileAnalyzer
+from .module.injections import Injection
 import os
 
 
@@ -11,7 +12,8 @@ def runner(fullpath):
             content = readFile(file)
             analyze = FileAnalyzer(file,content)
             phpstringlist = analyze.readPHPString()
-            print(phpstringlist)
+            injection = Injection(file,phpstringlist)
+            injection.sqlInjection()
             
 
 
