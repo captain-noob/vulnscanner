@@ -1,0 +1,37 @@
+[
+    {
+        "type": "images",
+        "extensions": [
+            "jpg",
+            "png",
+            "jpeg",
+            "gif",
+            "svg"
+        ]
+    },
+    {
+        "type":"php",
+        "extensions":[
+            "php",
+            "php5",
+            "phtml", 
+            "php3", 
+            "php4",
+            "phps"
+        ]
+    },
+    {
+        "type":"script",
+        "extensions":[
+            "js"
+        ]
+    },
+    {
+        "type":"styles",
+        "extensions":[
+            "css",
+            "scss",
+            "sass"
+        ]
+    }
+]

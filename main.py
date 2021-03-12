@@ -10,8 +10,7 @@ if __name__ == "__main__":
     os.environ.setdefault('BASE_DIR', os.path.dirname(os.path.abspath(__file__)))
 
     try:
-        # main()
-        print('a')
+        main()
     except Exception as e:
         print("Some Error Occured We cant able to analyze this file/program")
         print(e)

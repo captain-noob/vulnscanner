@@ -1,4 +1,5 @@
 import os
+from .loadConfig import getExtensions
 
 
 
@@ -20,3 +21,20 @@ def getAllFolders(path):
         for dir in directories:
             folders.append( os.path.join(root,dir))        
     return folders
+
+
+def getfileExtension(file):
+    if os.path.isfile(file):
+        return file.split('.')[-1]
+    else:
+        return None
+
+
+def filterPHPfiles(path):
+    php = getExtensions('php')
+    lst=[]
+    for ext in php:
+        for file in path:
+            if getfileExtension(file) == ext:
+                lst.append(file)
+    return (lst)
