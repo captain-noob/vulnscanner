@@ -1,4 +1,4 @@
-import os
+import os , codecs
 from .loadConfig import getExtensions
 
 
@@ -38,3 +38,9 @@ def filterPHPfiles(path):
             if getfileExtension(file) == ext:
                 lst.append(file)
     return (lst)
+
+
+def readFile(filename):
+    file = codecs.open(filename,encoding="cp437")
+    # file =open(filename,encoding="utf-8",errors="replace")
+    return file.read()

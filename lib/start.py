@@ -1,4 +1,5 @@
-from .module.filesandfolders import getAllFiles ,getFullPath ,filterPHPfiles
+from .module.filesandfolders import getAllFiles ,getFullPath ,filterPHPfiles ,readFile
+from .module.fileAnalyzer import FileAnalyzer
 import os
 
 
@@ -7,7 +8,11 @@ def runner(fullpath):
         files = getAllFiles(fullpath)
         files = filterPHPfiles(files)
         for file in files:
-            print(file)
+            content = readFile(file)
+            analyze = FileAnalyzer(file,content)
+            phpstringlist = analyze.readPHPString()
+            print(phpstringlist)
+            
 
 
 
