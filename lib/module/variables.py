@@ -39,11 +39,24 @@ def getDeclaredVariableswithData(content):
 
 
 def analyseVariables(variables):
+    resp_data=[]
     for data in variables:
-        # print(data[0])
         if "{" in data[-1]:
             value = data.split('=')
             if len(value) ==2 :
-                print(data)
+                resp_data.append(data)
         else:
-            print(data)
+            resp_data.append(data)
+    
+    return resp_data
+
+
+
+def splitVariableandData(data):
+    # for data in variables:
+    data = data.split('=',1)
+    if len(data) == 2 :
+        value={}
+        value['variable'] = data[0].replace('$','')
+        value['data'] = data[1].replace('"','').replace("'",'').replace(';','')
+        return value
