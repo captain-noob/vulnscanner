@@ -22,12 +22,18 @@ class Injection:
                     if len(prepare) < 1:
 
                         variableptt = re.compile("(\$\w*[A-Za-z0-9_])")
-                        print('[*] : Filename : '+self.filename)
                         cour = variableptt.finditer(value['data'])
-                        print('[+] : SQL injection might me possible with variables' )
+                        param =[]
                         for i in cour:
-                            print('\t'+i.group())
-                        print('[x] : '+data )
+                            param.append(i.group())
+                        if len(param)>0:
+                            print('[+] : SQL injection might me possible \t - Severity : High' )
+                            print('\tFile : '+self.filename)
+                            print('\tCode : '+data )
+                            for i in param:
+                                print('\tParam : '+i)
+                            print('\n')
+
                 
 
 
