@@ -10,3 +10,12 @@ def getExtensions(type):
     for i in data:
         if i['type'] == type:
             return(i['extensions'])
+
+
+def getQuery(type):
+    path = os.path.join(CONFIG_DIR,'sqlqueries.json')
+    data = open(path).read()
+    data = json.loads(data)
+    for i in data:
+        if i['type'] == type:
+            return(i['querys'])

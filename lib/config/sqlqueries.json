@@ -1,0 +1,20 @@
+[{
+    "type":"sql",
+    "querys":[
+        "SELECT",
+        "FROM",
+        "WHERE",
+        "AND",
+        "BETWEEN",
+        "AS",
+        "CREATE",
+        "TABLE",
+        "DELETE",
+        "INSERT",
+        "INTO",
+        "BY",
+        "GROUP",
+        "HAVING",
+        "COUNT"
+    ]
+}]

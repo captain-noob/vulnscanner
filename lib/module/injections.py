@@ -1,7 +1,7 @@
 from .variables import getDeclaredVariableswithData, analyseVariables, splitVariableandData
-from .SQLquerycheck import sqlQueryValidator
-# import sqlvalidator
-import sqlparse
+from .SQLquerycheck import sqlQueryValidator,customSQLQueryValidator
+import sqlvalidator
+import re
 
 class Injection:
     def __init__(self,filename,content):
@@ -14,16 +14,21 @@ class Injection:
         for data in variables:
             value = splitVariableandData(data) #spliting the variable and data
             if len(value['data']) > 1:
-
-                # query = sqlparse.parse(value['data'])
-                print(value['data'])
-
-                # sql = sqlvalidator.parse(value['data'])
+                sql = customSQLQueryValidator(value['data'])
                 query = sqlQueryValidator(value['data'])
-                # if   sql.is_valid():
-                #     print('valid : '+data)
-                # else:
-                #     print('Error : '+data)
+                if sql or query:
+                    pattern = re.compile(r'prepare\(.*?[\);]')
+                    prepare=pattern.findall(value['data'])
+                    if len(prepare) < 1:
+
+                        variableptt = re.compile("(\$\w*[A-Za-z0-9_])")
+                        print('[*] : Filename : '+self.filename)
+                        cour = variableptt.finditer(value['data'])
+                        print('[+] : SQL injection might me possible with variables' )
+                        for i in cour:
+                            print('\t'+i.group())
+                        print('[x] : '+data )
+                
 
 
             
