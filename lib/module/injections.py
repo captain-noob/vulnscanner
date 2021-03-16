@@ -21,10 +21,10 @@ class Injection:
                     prepare=pattern.findall(value['data'])
                     if len(prepare) < 1:
 
-                        variableptt = re.compile("(\$\w*[A-Za-z0-9_])")
+                        variableptt = re.compile(r"(\$\w*[A-Za-z0-9_\]\[])")
                         cour = variableptt.finditer(value['data'])
                         param =[]
-                        for i in cour:
+                        for i in cour:                            
                             param.append(i.group())
                         if len(param)>0:
                             print('[+] : SQL injection might me possible \t - Severity : High' )
@@ -32,6 +32,16 @@ class Injection:
                             print('\tCode : '+data )
                             for i in param:
                                 print('\tParam : '+i)
+                            
+                            print('\tFix : Use PDO insted of direct SQL execution')
+                            print('\tReffer : https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html#escaping-sqli-in-php')
+                            print('\n')
+                        else:
+                            print('[+] : SQL injection might me possible \t - Severity : Low' )
+                            print('\tFile : '+self.filename)
+                            print('\tCode : '+data )
+                            print('\tFix : Use PDO insted of direct SQL execution')
+                            print('\tReffer : https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html#escaping-sqli-in-php')
                             print('\n')
 
                 
