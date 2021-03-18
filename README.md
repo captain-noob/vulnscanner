@@ -1,7 +1,7 @@
 
 # VULN-SCANNER
 
-**vulnscan** is a web application **source code vulnerability scanner** (now we are developing for PHP applications). It could be used to detect if target project contain any known vulnerabilitys. One of the best ways we can do that is to help developers and security professionals improve the web application they are producing that everyone else relies on.
+**vulnscan** is a web application **source code vulnerability scanner** (now we are developing for PHP applications). It could be used to detect if target project contain any known vulnerabilities. One of the best ways we can do that is to help developers and security professionals improve the web application they are producing that everyone else relies on.
 
   
 
@@ -35,7 +35,7 @@ This tool is designed to be cross-platformed. It could be compiled and run on bo
 
     Now, this tool can identify SQL injection possibilities.
 
-#
+## About
 
   
 
@@ -45,7 +45,7 @@ This tool is designed to be cross-platformed. It could be compiled and run on bo
 
   
 
-#
+## Contacts
 
   
   
