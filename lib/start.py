@@ -14,6 +14,7 @@ def runner(fullpath):
             phpstringlist = analyze.readPHPString()
             injection = Injection(file,phpstringlist)
             injection.sqlInjection()
+            injection.commandInjection()
             
 
 

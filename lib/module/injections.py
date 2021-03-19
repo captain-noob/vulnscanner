@@ -43,8 +43,10 @@ class Injection:
                             print('\tFix : Use PDO insted of direct SQL execution')
                             print('\tReffer : https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html#escaping-sqli-in-php')
                             print('\n')
+    
 
-                
+    def commandInjection(self):   
+        print(self.content)     
 
 
             
