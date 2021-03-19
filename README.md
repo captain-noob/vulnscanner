@@ -21,7 +21,7 @@ This tool is designed to be cross-platformed. It could be compiled and run on bo
 
   
 
-## Uasge
+## Usage
 
    
    
