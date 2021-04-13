@@ -71,16 +71,16 @@ This tool is designed to be cross-platformed. It could be compiled and run on bo
 
 
 ## Working
-    ```bash
-        usage: main.py [-h] [-f FILE] [-F FOLDER]
+```bash
+    usage: main.py [-h] [-f FILE] [-F FOLDER]
 
-        This is the vuln scanner
+    This is the vuln scanner
 
-        optional arguments:
-        -h, --help                      Show this help message and exit
-        -f FILE,    --file FILE         Analize with a file
-        -F FOLDER,  --folder FOLDER     Analize file with in a folder
-    ```
+    optional arguments:
+    -h, --help                      Show this help message and exit
+    -f FILE,    --file FILE         Analize with a file
+    -F FOLDER,  --folder FOLDER     Analize file with in a folder
+```
 
 ## Contacts
 
