@@ -7,13 +7,14 @@ import os
 
 
 def scanner(file):
-    
     content = readFile(file)
     analyze = FileAnalyzer(file,content)
     phpstringlist = analyze.readPHPString()
     injection = Injection(file,phpstringlist)
     injection.sqlInjection()
-    injection.commandInjection()
+    # injection.commandInjection()
+
+
 
 def runner(path):
     fullpath=getFullPath(path)

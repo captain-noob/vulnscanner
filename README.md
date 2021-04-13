@@ -57,7 +57,8 @@ This tool is designed to be cross-platformed. It could be compiled and run on bo
 
   
 
-    Now, this tool can identify SQL injection possibilities.
+    - Now, this tool can identify SQL injection possibilities.
+    - Controll using commandline parameters 
 
   
 
@@ -68,7 +69,18 @@ This tool is designed to be cross-platformed. It could be compiled and run on bo
     - Completed SQL Injection Module.
     - Next MileStone : OS Command Injection
 
-  
+
+## Working
+    ```bash
+        usage: main.py [-h] [-f FILE] [-F FOLDER]
+
+        This is the vuln scanner
+
+        optional arguments:
+        -h, --help                      Show this help message and exit
+        -f FILE,    --file FILE         Analize with a file
+        -F FOLDER,  --folder FOLDER     Analize file with in a folder
+    ```
 
 ## Contacts
 

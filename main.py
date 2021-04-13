@@ -18,10 +18,8 @@ def begin():
     args = parser.parse_args() #read args
 
     if args.file:
-        # print('data')
         fileRunner(args.file)
     elif args.folder:
-        # print('folder')
         runner(args.folder)
     else:
         parser.print_help()
@@ -38,7 +36,6 @@ if __name__ == "__main__":
     os.environ.setdefault('SETTINGS_MODULE', 'lib.settings')
     os.environ.setdefault('BASE_DIR', os.path.dirname(os.path.abspath(__file__)))
     try:
-        # main()
         begin()
     except Exception as e:
         print("Some Error Occured We cant able to analyze this file/program")

@@ -46,7 +46,10 @@ class Injection:
     
 
     def commandInjection(self):   
-        print(self.content)     
+        variables = getDeclaredVariableswithData(self.content) #getting declared variables
+        variables = analyseVariables(variables) # verifing the extracted data
+        for variable in variables:
+            print(variable)  
 
 
             
