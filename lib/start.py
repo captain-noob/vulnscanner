@@ -11,8 +11,8 @@ def scanner(file):
     analyze = FileAnalyzer(file,content)
     phpstringlist = analyze.readPHPString()
     injection = Injection(file,phpstringlist)
-    injection.sqlInjection()
-    # injection.commandInjection()
+    # injection.sqlInjection()
+    injection.commandInjection()
 
 
 

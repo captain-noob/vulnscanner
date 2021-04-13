@@ -8,7 +8,7 @@ class Injection:
         self.filename = filename
         self.content = content
 
-    def sqlInjection(self):
+    def sqlInjection(self): ##tobe reedit
         variables = getDeclaredVariableswithData(self.content) #getting declared variables
         variables = analyseVariables(variables) # verifing the extracted data
         for data in variables:
@@ -43,13 +43,19 @@ class Injection:
                             print('\tFix : Use PDO insted of direct SQL execution')
                             print('\tReffer : https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html#escaping-sqli-in-php')
                             print('\n')
-    
 
-    def commandInjection(self):   
-        variables = getDeclaredVariableswithData(self.content) #getting declared variables
-        variables = analyseVariables(variables) # verifing the extracted data
-        for variable in variables:
-            print(variable)  
+
+
+    def commandInjection(self):
+        print(self.content)
+        variable_pattern = re.compile(r'(\$.*?[;\{])',re.DOTALL)
+        value = variable_pattern.search(str(self.content))
+        print(value)
+        exit()   
+        # variables = getDeclaredVariableswithData(self.content) #getting declared variables
+        # # variables = analyseVariables(variables) # verifing the extracted data
+        # for variable in variables:
+        #     print(variable)  
 
 
             
