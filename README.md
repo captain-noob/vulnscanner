@@ -29,7 +29,6 @@ This tool is designed to be cross-platformed. It could be compiled and run on bo
     - git clone https://github.com/captain-noob/vulnscanner.git
     - cd vulnscanner/
     - pip install -r requirements.txt
-    - change content `path` variable on `lib/start.py` 
     - python main.py
     
 
