@@ -40,11 +40,5 @@ def fileRunner(path):
 
 
 def main(path):
-    # path='../../web/eduapp_web_api'
-    # path='C:\\xampp\\htdocs\\crime'
-    # path='C:\\xampp\\htdocs\\e-seva'
-    # path='../DVWA'
-    # path='../Vulnerable-Web-Application'
-    # path='../Art-gallery'
     fullpath=getFullPath(path)
     runner(fullpath)
