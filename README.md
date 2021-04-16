@@ -82,6 +82,38 @@ This tool is designed to be cross-platformed. It could be compiled and run on bo
     -F FOLDER,  --folder FOLDER     Analize file with in a folder
 ```
 
+## Output
+```bash
+vulnscanner >  python .\main.py -f .\test\sqli.php
+[+] : SQL injection might me possible    - Severity : High
+        File : C:\Users\Roshan\Desktop\tools\vulnscanner\test\sqli.php
+        Code : $news_dbg = mysql_query("SELECT id,name,image,specifications FROM ".$_GET['id']." WHERE id=".$DB_CHALL_TWO) or die(mysql_error());
+        Param : $_GET[
+        Param : $DB_CHALL_TWO
+        Fix : Use PDO insted of direct SQL execution
+        Reffer : https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html#escaping-sqli-in-php
+
+
+[+] : SQL injection might me possible    - Severity : High
+        File : C:\Users\Roshan\Desktop\tools\vulnscanner\test\sqli.php
+        Code : $news = mysql_query("SELECT id,name,image,specifications FROM ".$DB_CHALL_TWO." WHERE id=".$_GET['id']) or die(mysql_error());
+        Param : $DB_CHALL_TWO
+        Param : $_GET[
+        Fix : Use PDO insted of direct SQL execution
+        Reffer : https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html#escaping-sqli-in-php
+
+
+[+] : SQL injection might me possible    - Severity : High
+        File : C:\Users\Roshan\Desktop\tools\vulnscanner\test\sqli.php
+        Code : $news = mysql_query("SELECT name,image,id FROM ".$DB_CHALL_TWO." ORDER BY id DESC LIMIT 0,3") or die(mysql_error());
+        Param : $DB_CHALL_TWO
+        Fix : Use PDO insted of direct SQL execution
+        Reffer : https://cheatsheetseries.owasp.org/cheatsheets/SQL_Injection_Prevention_Cheat_Sheet.html#escaping-sqli-in-php
+
+
+Finished in 0.11 second(s)
+```
+
 ## Contacts
 
   
